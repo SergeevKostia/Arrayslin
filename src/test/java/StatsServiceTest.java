@@ -48,7 +48,7 @@ public class StatsServiceTest {
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAver = 180/12;
+        int expectedAver = 180 / 12;
         int actualAver = service.getAverage(sales);
 
         Assertions.assertEquals(expectedAver, actualAver);
