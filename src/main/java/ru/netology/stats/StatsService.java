@@ -32,14 +32,18 @@ public class StatsService {
     }
 
     public int getAverage(int[] sales) {
-        int mid = getAmount(sales) / sales.length;
-        return mid;
+        if (sales.length > 0) {
+            return getAmount(sales) / sales.length;
+        }
+        return 0;
     }
 
     public int underAverage(int[] sales) {
         int undAverage = 0;
+        long UnAverage = getAverage(sales);
+
         for (int sale : sales) {
-            if (sale < getAverage(sales)) {
+            if (sale < UnAverage) {
                 undAverage += 1;
             }
         }
@@ -48,8 +52,10 @@ public class StatsService {
 
     public int overAverage(int[] sales) {
         int ovrAverage = 0;
+        long ovAver = getAverage(sales);
+
         for (int sale : sales) {
-            if (sale > getAverage(sales)) {
+            if (sale > ovAver) {
                 ovrAverage += 1;
             }
         }
